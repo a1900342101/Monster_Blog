@@ -1,0 +1,145 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{% block title %} {{title}} {% endblock %}</title>
+<!--
+<meta name="keywords" content="黑色模板,个人网站模板,个人博客模板,博客模板,css3,html5,网站模板" />
+<meta name="description" content="这是一个有关黑色时间轴的css3 html5 网站模板" />
+-->
+<link href="{% static "css/styles.css" %}" rel="stylesheet">
+<link href="{% static "css/animation.css" %}" rel="stylesheet">
+<!-- 返回顶部调用 begin -->
+<link href="{% static "css/lrtk.css" %}" rel="stylesheet" />
+<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "js/js.js" %}"></script>
+<!-- 返回顶部调用 end-->
+<!--[if lt IE 9]>
+<script src="{% static "js/modernizr.js" %}"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <nav id="nav">
+    <ul>
+      <li><a href="/" >网站首页</a></li>
+      <li><a href="/" target="_blank" title="">个人简介</a></li>
+      <li><a href="/" target="_blank" title="图书推荐">相关图书</a></li>
+      <li><a href="/" target="_blank" title="网站建设">网站建设</a></li>
+      <li><a href="/" target="_blank" title="HTML5 / CSS3">前端知识</a></li>
+      <li><a href="/" target="_blank" title="技术探讨">技术探讨</a></li>
+      <li><a href="/" target="_blank" title="慢生活">慢生活</a></li>
+      <li><a href="/" target="_blank" title="碎言碎语">碎言碎语</a></li>
+    </ul>
+    <script src="{% static "js/silder.js" %}"></script><!--获取当前页导航 高亮显示标题--> 
+  </nav>
+</header>
+<!--header end-->
+<div id="mainbody">
+  <div class="info">
+    <figure> 
+      <img src="{% static "img/art.jpg" %}" alt="Panama Hat"/>
+      <figcaption><strong>渡人如渡己，渡已，亦是渡</strong> 当我们被误解时，会花很多时间去辩白。 但没有用，没人愿意听，大家习惯按自己的所闻、理解做出判别，每个人其实都很固执。与其努力且痛苦的试图扭转别人的评判，不如默默承受，给大家多一点时间和空间去了解。而我们省下辩解的功夫，去实现自身更久远的人生价值。其实，渡人如渡己，渡已，亦是渡人。</figcaption>
+    </figure>
+    <div class="card">
+      <h1>About me</h1>
+      <p>网名：MonsterHu | 心如止水</p>
+      <p>职业：A sutdent</p>
+      <p>电话：</p>
+      <p>Email：1900342101@qq.com</p>
+      <ul class="linkmore">
+        <li><a href="/" class="talk" title="给我留言"></a></li>
+        <li><a href="/" class="address" title="联系地址"></a></li>
+        <li><a href="/" class="email" title="给我写信"></a></li>
+        <li><a href="/" class="photos" title="生活照片"></a></li>
+        <li><a href="/" class="heart" title="关注我"></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--info end-->
+  <div class="blank"></div>
+  <div class="blogs">
+    <ul class="bloglist">
+      <li>
+
+        {% block content %}
+                have a test body
+        {% endblock %}
+        <!--arrow_box end--> 
+      </li>
+    </ul>
+    <!--bloglist end-->
+    <aside>
+      <div class="search">
+        <form class="searchform" method="get" action="#">
+          <input type="text" name="s" value="Search" onfocus="this.value=''" onblur="this.value='Search'">
+        </form>
+      </div>
+      <div class="tuijian">
+        <h2>推荐文章</h2>
+        <ol>
+          <li><span><strong>1</strong></span><a href="/">敬请期待</a></li>
+        </ol>
+      </div>
+
+      <div class="viny">
+        <dl>
+          <dt class="art"><img src="{% static "img/artwork.png" %}" alt="专辑"></dt>
+          <dd class="icon-song"><span></span>南方姑娘</dd>
+          <dd class="icon-artist"><span></span>歌手：赵雷</dd>
+          <dd class="icon-album"><span></span>所属专辑：《赵小雷》</dd>
+          <dd class="icon-like"><span></span><a href="/">喜欢</a></dd>
+          <dd class="music">
+            <audio src="{% static "media/nf.mp3" %}" controls></audio>
+          </dd>
+          <!--也可以添加loop属性 音频加载到末尾时，会重新播放-->
+        </dl>
+      </div>
+    </aside>
+  </div>
+  <!--blogs end--> 
+</div>
+<!--mainbody end-->
+<footer>
+  <div class="footer-mid">
+    <div class="links">
+      <h2>友情链接</h2>
+      <ul>
+        <li><a href="/">杨青同学</a></li>
+      </ul>
+    </div>
+<!--
+    <div class="visitors">
+      <h2>最新评论</h2>
+      <dl>
+        <dt><img src="{% static "img/s8.jpg" %}">
+        <dt>
+        <dd>DanceSmile
+          <time>49分钟前</time>
+        </dd>
+        <dd>在 <a href="/" class="title">如果要学习web前端开发，需要学习什么？ </a>中评论：</dd>
+        <dd>文章非常详细，我很喜欢.前端的工程师很少，我记得几年前yahoo花高薪招聘前端也招不到</dd>
+      </dl>
+    </div>
+-->
+    <section class="flickr">
+      <h2>喜爱作品</h2>
+      <ul>
+        <li><a href="/"><img src="{% static "img/01.jpg" %}"></a></li>
+        <li><a href="/"><img src="{% static "img/02.jpg" %}"></a></li>
+        <li><a href="/"><img src="{% static "img/03.jpg" %}"></a></li>
+      </ul>
+    </section>
+  </div>
+  <div class="footer-bottom">
+    <p>Designed by <a href="http://www.0hao0hao.com">DanceSmile</p>
+    <p>Copyright 2017 Power by <a href="http://www.0hao0hao.com">MonsterHu</a></p>
+
+  </div>
+</footer>
+<!-- jQuery仿腾讯回顶部和建议 代码开始 -->
+<div id="tbox"> <a id="togbook" href="/e/tool/gbook/?bid=1"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
+<!-- 代码结束 -->
+</body>
+</html>

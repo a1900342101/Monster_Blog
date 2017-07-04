@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}MonsterHu's Blog{% endblock %}
+
+{% block content %}
+
+  {% for blog in blogs %}
+  <div class="arrow_box">
+          <div class="ti"></div>
+          <!--三角形-->
+          <div class="ci"></div>
+          <!--圆形-->
+          <h2 class="title"><a href="/blog/{{blog.id}}.html" target="_blank">{{blog.title}}</a></h2>
+          <ul class="textinfo">
+            <a href="/"><img src="{% static "img/1.jpg" %}"></a>
+            <p><a href="/blog/{{blog.id}}.html">{{ blog.index_text }}</a></p>
+          </ul>
+          <ul class="details">
+            <li class="likes"><a href="#">{{blog.likes}}</a></li>
+            <li class="comments"><a href="#">{{blog.comment}}</a></li>
+            <li class="icon-time"><a href="#">{{blog.times}}</a></li>
+          </ul>
+  </div>
+  {% endfor %}
+
+{% endblock %}

@@ -5,13 +5,17 @@
 
 {% block content %}
 	<div id="index_view">
+
       <h2 class="t_nav"><a href="/">网站首页</a><a href="/">慢生活</a></h2>
       <h1 class="c_titile">{{blog.title}}</h1>
       <p class="box">发布时间：{{blog.times}}<span>编辑：{{author}}</span>阅读（30）</p>
       <ul>
-     		<p>
-     			{{blog.body}}
-     		</p>
+     		<p id="p2">
+                {% autoescape off %}
+                    {{blog.content}}
+                {% endautoescape %}
+            </p>
+     			
       </ul>
     </div>
 {% endblock %}

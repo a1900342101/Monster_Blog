@@ -17,11 +17,10 @@ Including another URLconf
 from blog import views
 from django.conf.urls import url
 from django.contrib import admin
+
 urlpatterns = [
-    url(r'^backtai/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
-    #url(r'^view.html$',views.view),
     url(r'^blog/(?P<id>[0-9]{1}).html$',views.view),
-    url(r'^aa/$', views._404),
     
 ]

@@ -22,6 +22,7 @@ DanceSmile-杨青,CSND社区... ...
 
 # 在服务器部署Monster_blog
 1.pip install uwsgi
+(centos7 报错没有Python.h的话，先执行yum install python-devel)
 
 2.编辑uwsgi配置文件mysite.ini
 
@@ -50,8 +51,9 @@ DanceSmile-杨青,CSND社区... ...
 	python manage.py collectstatic
 
 5.uwsgi --ini /data/mysite.ini
-	运行成功
+	运行成功，结束:killall -s 9 uwsgi
 
 6.配置nginx/apache2(可忽略)
 	方法多样，自行研究
+	结束nginx:nginx -s stop
 

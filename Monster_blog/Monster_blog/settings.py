@@ -22,7 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,"static/")
 PROJECT_ROOT = os.path.dirname(__file__)
-
+# 2017/9/2我添加以修正上传bug
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
  
 STATICFILES_FINDERS = (
   'django.contrib.staticfiles.finders.FileSystemFinder',
